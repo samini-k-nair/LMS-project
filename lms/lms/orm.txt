@@ -1,0 +1,47 @@
+from django.db.model import Q
+CRUD with ORM 
+---insert a Record
+
+Courses.objects.create(title ='Data science',description = 'qwertyuu',
+                        image = 'photo.jpg',instructor = 'xyz',
+                        category = 'IT & support',level = 'intermediate',
+                        fee = 35000,offer_fee = 40000)
+
+orm query for fetch all records
+
+Courses.objects.all()
+
+orm query for fetch  records with id --5
+
+Courses.objects.get(id = 5)
+
+orm query for fetch all beginner level Courses
+
+Courses.objects.filter(level = 'beginner')
+
+
+orm query for fetch all Courses with price 35000
+
+Courses.objects.filter(fee = 35000)
+
+orm query for all Courses with price less than or equal to 50000
+
+Courses.objects.filter(fee__lte = 50000)
+
+orm query to fetch  all Courses otherthan  level = 'beginner'
+
+
+Courses.objects.filter().exclude(level = 'beginner')
+
+orm query to get record price
+
+Courses--- search query
+
+filter beginner level Courses and intermediate Courses
+
+Courses.objects.filter(Q(title __icontains = query) | Q(description __icontains = query ) |
+                        Q(image __icontains = query) | Q(category __icontains = query))
+
+filter begginer level courses and intermediate courses.
+
+Courses.objects.filter(level='begginer'| level= 'intermediate')
