@@ -14,47 +14,56 @@
             <div class="col-md-6">
                 <label for="courseTitle" class="form-label">First Name</label>
                 <!-- <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title" name="title" required> -->
-                {{form.title}}
-                {% if form.title.errors %}
-                 <p class="text-danger">{{form.title.errors|join:" "}}</p>
+                {{profile_form.first_name}}
+                {% if profile_form.title.errors %}
+                 <p class="text-danger">{{profile_form.first_name.errors|join:" "}}</p>
                  {% endif %}
             </div>
             <div class="col-md-6">
 
                 <label for="courseImage" class="form-label">Last Name</label>
                 <!-- <input class="form-control" type="file" id="courseImage" name="image"> -->
-                 {{form.image}}
-                 {% if form.image.errors %}
-                 <p class="text-danger">{{form.image.errors|join:" "}}</p>
+                 {{profile_form.last_name}}
+                 {% if profile_form.image.errors %}
+                 <p class="text-danger">{{profile_form.last_name.errors|join:" "}}</p>
                  {% endif %}
 
             </div>
         </div>
          <div class="row mb-3">
             <div class="col-md-3">
+                    <label for="courseDescription" class="form-label">Email</label>
+                    <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
+                     {{profile_form.email}}
+                    {% if profile_form.email.errors %}
+                    <p class="text-danger">{{profile_form.email.errors|join:" "}}</p>
+                    {% endif %}
+            </div> 
+         <div class="row mb-3">
+            <div class="col-md-3">
                     <label for="courseDescription" class="form-label">Image</label>
                     <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
-                     {{form.description}}
-                    {% if form.description.errors %}
-                    <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                     {{student_form.image}}
+                    {% if student_form.image.errors %}
+                    <p class="text-danger">{{student_form.image.errors|join:" "}}</p>
                     {% endif %}
             </div> 
         <div class="row mb-3">
             <div class="col-md-6">
                     <label for="courseDescription" class="form-label">Password</label>
                     <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
-                     {{form.description}}
-                    {% if form.description.errors %}
-                    <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                     {{profile_form.password}}
+                    {% if profile_form.password.errors %}
+                    <p class="text-danger">{{profile_form.password.errors|join:" "}}</p>
                     {% endif %}
             </div>
 
             <div class="col-md-6">
                     <label for="courseDescription" class="form-label">Confirm Password</label>
                     <!-- <textarea class="form-control" id="courseDescription" rows="4" placeholder="Enter course description" name="description"></textarea> -->
-                    {{form.description}}
-                    {% if form.description.errors %}
-                     <p class="text-danger">{{form.description.errors|join:" "}}</p>
+                    {{profile_form.confirm_password}}
+                    {% if profile_form.confirm_password.errors %}
+                     <p class="text-danger">{{profile_form.confirm_password.errors|join:" "}}</p>
                      {% endif %} 
 
             </div>
@@ -72,9 +81,9 @@
             {% endfor %}
             
           </select> -->
-          {{form.category}}
-          {% if form.category.errors %}
-          <p class="text-danger">{{form.category.errors|join:" "}}</p>
+          {{student_form.qualification}}
+          {% if student_form.qualification.errors %}
+          <p class="text-danger">{{student_form.qualification.errors|join:" "}}</p>
           {% endif %}
         </div>
 
