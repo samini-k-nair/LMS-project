@@ -26,6 +26,10 @@ urlpatterns = [
     path('courses/',include('courses.urls')),
     path('authentication/',include('authentication.urls')),
     path('students/',include('students.urls')),
+    path('instructor/',include('instructors.urls')),
+    path('payments/',include('payments.urls')),
+   
+    
 ]
 
 urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

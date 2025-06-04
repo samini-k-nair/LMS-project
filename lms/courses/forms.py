@@ -21,6 +21,13 @@ class CourseCreateForm(forms.ModelForm):
 
                                                  'required':'required'
                                                }),
+                'tags': forms.TextInput(attrs={
+                                                 'class': 'form-control',
+
+                                                 'placeholder':'Enter Tags Name',
+
+                                                 'required':'required'
+                                               }),                               
                 'image': forms.FileInput (attrs={
                                                  'class': 'form-control',
 

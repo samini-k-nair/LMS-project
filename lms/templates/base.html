@@ -98,15 +98,14 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" data-bs-toggle="dropdown">
                     <div class="d-flex align-items-center justify-content-center text-center">
-
-                        <img src="" style="width: 30px; height: 30px; border-radius: 50%;" alt="">
+                        {% get_image request as photo %}
+                        {% if photo %}
+                        <img src="{{photo.url}}" style="width: 30px; height: 30px; border-radius: 50%;" alt="">
+                        {% endif %}
                         <p class="text-secondary">{{user}}</p>
 
                     </div>
                     
-                        
-                    
-
                     </a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>

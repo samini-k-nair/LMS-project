@@ -15,6 +15,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 from  authentication.permissions import permission_roles
+
+from lms.utility import get_recommended_courses
 # Create your  here.
 class CoursesListView(View):
 
@@ -42,6 +44,19 @@ class CoursesListView(View):
         data = {'courses':courses,'page':'courses-page','query':query}
 
         return render(request,'courses/courses-list.html',context=data)
+class CourseDetailView(View): 
+
+    def get(self,request,*args,**kwargs):
+
+        uuid = kwargs.get('uuid')
+
+        course = Courses.objects.get(uuid=uuid) # pk means primery key
+
+        recommended_courses = get_recommended_courses(course)
+
+        data = {'course': course,'recommended_courses': recommended_courses}
+
+        return render(request,'courses/course-detail.html',context=data)    
     
 class HomeView(View): 
 
@@ -138,7 +153,7 @@ class InstructorCourseDetailView(View):
 
         course = Courses.objects.get(uuid=uuid) # pk means primery key
 
-        data = {'course': course}
+        data = {'course': course }
 
         return render(request,'courses/instructor-course-detail.html',context=data)
 

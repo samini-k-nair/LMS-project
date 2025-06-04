@@ -18,6 +18,7 @@
                     <p class="text-danger">{{form.title.errors|join:" "}}</p>
                     {% endif %}
                 </div>    
+                 
                 <div class="col-md-6">
                     <label for="courseImage" class="form-label">Course Image</label>
                     <!-- <input class="form-control" name="image" type="file" id="courseImage"> -->
@@ -37,7 +38,14 @@
                     <p class="text-danger">{{form.description.errors|join:" "}}</p>
                     {% endif %}
                 </div>
-  
+                <div class="col-md-6">
+                    <label for="courseTitle" class="form-label"> Tags</label>
+                    <!-- <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title" name="title"> -->
+                    {{form.tags}} 
+                    {% if form.tags.errors %}
+                    <p class="text-danger">{{form.tags.errors|join:" "}}</p>
+                    {% endif %}
+                </div>   
                 <div class="mb-3">
                    <label for="courseCategory" class="form-label">Category</label>
                    <!-- <select class="form-select" id="courseCategory" name="category">
