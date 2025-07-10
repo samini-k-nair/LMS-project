@@ -7,6 +7,3 @@ urlpatterns =[
 ]
 
 
-# urlpatterns =[
-#     path('student-register/',views.StudentRegisterView.as_view(),name='student-register')
-# ]
